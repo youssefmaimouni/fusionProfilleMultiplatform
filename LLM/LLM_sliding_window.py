@@ -5,6 +5,9 @@ import random
 import re
 import os
 from datetime import datetime
+from dotenv import load_dotenv
+# Load environment variables from .env file
+load_dotenv()
 
 # =============================================================================
 # UTILITAIRES
@@ -209,7 +212,7 @@ def load_json_with_source(filepath, source_name, limit=None):
 
 if __name__ == "__main__":
     # ⚠️ Insère ta clé API ici
-    API_KEY = "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"
+    API_KEY = os.getenv("openRouter_api_key")
 
     # --- Chargement des fichiers ---
     linkedin_profiles = load_json_with_source("linkedin_profiles_normalized.json", "LinkedIn")

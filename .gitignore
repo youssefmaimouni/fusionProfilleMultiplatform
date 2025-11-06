@@ -9,3 +9,4 @@ matching steps/
 *llm_outputs*
 *test*
 .venv*
+.env

@@ -2,7 +2,11 @@ import json
 import math
 # Ajout de la bibliothèque Google
 import google.generativeai as genai
+from dotenv import load_dotenv
 import os
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Découpage d'une liste de profils en batchs de taille batch_size
 def chunk_list(data, batch_size):
@@ -82,7 +86,7 @@ def load_json_with_source(filepath, source_name):
 if __name__ == "__main__":
     # Remplacez par votre clé API de Google AI Studio
     # Il est recommandé de la stocker dans une variable d'environnement pour plus de sécurité
-    API_KEY = "AIzaSyA4T43YS1LKpZ3BH64F4V0_wCZjEtOMbMs"
+    API_KEY = os.getenv("gemini_api_key")
 
     linkedin_profiles = load_json_with_source("linkedin_profiles_normalized.json", "LinkedIn")
     twitter_profiles = load_json_with_source("twitter_data_cleaned.json", "Twitter")

@@ -5,6 +5,10 @@ import random
 import re
 import os
 from datetime import datetime
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()   
 
 # --- Utilities --------------------------------------------------------------
 def chunk_list(data, batch_size):
@@ -188,7 +192,7 @@ def load_json_with_source(filepath, source_name, limit=1000):
 
 # --- Main ------------------------------------------------------------------
 if __name__ == "__main__":
-    API_KEY = "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"
+    API_KEY = os.getenv("openRouter_api_key")
 
     linkedin_profiles = load_json_with_source("linkedin_profiles_normalized.json", "LinkedIn", limit=1000)
     twitter_profiles = load_json_with_source("twitter_data_cleaned.json", "Twitter", limit=1000)
