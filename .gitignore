@@ -1,0 +1,11 @@
+*.json
+*.txt
+*.npy
+*.png
+*emb_cache*
+*/results*
+*/embeddings*
+matching steps/
+*llm_outputs*
+*test*
+.venv*
