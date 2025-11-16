@@ -11,3 +11,4 @@ matching steps/
 .venv*
 .env
 */stats*
+.ipynb_checkpoints/
